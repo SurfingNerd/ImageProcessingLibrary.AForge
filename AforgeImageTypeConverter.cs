@@ -16,7 +16,7 @@ namespace ImageProcessingLibrary.AForge
             return instance is Bitmap && targetType == typeof(UnmanagedImage);
         }
 
-        public object Convert(object instance)
+        public object Convert(object instance, Type targetType)
         {
             return global::AForge.Imaging.UnmanagedImage.FromManagedImage((Bitmap)instance);
         }
@@ -29,7 +29,7 @@ namespace ImageProcessingLibrary.AForge
             return instance is UnmanagedImage && targetType == typeof(Bitmap);
         }
 
-        public object Convert(object instance)
+        public object Convert(object instance, Type targetType)
         {
             UnmanagedImage unmanagedImageinstance = instance as UnmanagedImage;
             return unmanagedImageinstance.ToManagedImage();

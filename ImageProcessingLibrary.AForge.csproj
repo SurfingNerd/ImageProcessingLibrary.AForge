@@ -40,6 +40,12 @@
     <Reference Include="AForge.Math">
       <HintPath>..\Vision.Core\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
     </Reference>
+    <Reference Include="AForge.Vision">
+      <HintPath>..\Vision.Core\packages\AForge.Vision.2.2.5\lib\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="CopaceticSoftware.pMixins">
+      <HintPath>..\Vision.Core\packages\pMixins.0.1.7\lib\net35\CopaceticSoftware.pMixins.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -63,6 +69,21 @@
     <Compile Include="HSLModifierActivity.cs" />
     <Compile Include="HueModifierActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vision\IMotionDectorMixins.cs">
+      <Generator>pMixinsEmptySingleFileCodeGenerator</Generator>
+      <LastGenOutput>IMotionDectorMixins.mixin.cs</LastGenOutput>
+    </Compile>
+    <Compile Include="Vision\IMotionDectorMixins.mixin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMotionDectorMixins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision\MotionDetectorActivity.cs" />
+    <Compile Include="Vision\Template1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Template1.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Filters\GenerateAForgeFilters.tt">
@@ -70,6 +91,10 @@
       <LastGenOutput>GenerateAForgeFilters.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Vision\Template1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Template1.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
